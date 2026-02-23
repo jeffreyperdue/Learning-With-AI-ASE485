@@ -2,7 +2,7 @@
 
 **A single menu item:** Pimientos de Shishito – blistered shishito peppers, Maldon sea salt
 
-Taken directly from [Sotto](https://www.sottocincinnati.com/menus/#dinner) on 2.3.26
+Taken directly from [Mita's](https://www.mitas.co/menu/dinner/) on 2.3.26
 
 A menu lists a small plate of blistered shishito peppers seasoned with sea salt. No allergens are mentioned, and the description suggests a simple preparation focused on vegetables and seasoning.
 
