@@ -5,3 +5,15 @@
 - **Topic**: User Testing
 - **Focus**: Gathering info from different AIs
 - **Completed**: Collected info on the most effective testing strategies for web applications from Gemini, ChatGPT, and Copilot
+
+## Week 11: 3/23/2026 - 3/29/2026
+
+- **Topic**: User Testing
+- **Focus**: Analyzing user testing strategy information
+- **Completed**: Consolidated testing strategy information from week 10 and used Copilot and Claude to analyze the best strategy combinations
+
+## Week 12: 3/30/2026 - 4/5/2026
+
+- Due to personal life events, I had to take a break this week.
+
+## Week 13: 4/6/2026 - 4/12/2026

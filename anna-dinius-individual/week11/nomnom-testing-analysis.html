@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NomNom Safe — User Testing Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1108;
+    --paper: #faf6ef;
+    --cream: #f2ead8;
+    --rust: #c0431a;
+    --gold: #c8901e;
+    --sage: #4a6741;
+    --dust: #8c7a62;
+    --rule: #d4c9b4;
+    --tag-bg: #ede5d5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 48px 32px 80px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ─────────────────────────────────────── */
+  header {
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0 24px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 16px;
+  }
+
+  .brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--rust);
+  }
+  .brand span { color: var(--ink); font-style: italic; }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dust);
+    margin-top: 6px;
+  }
+
+  .meta {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--dust);
+    line-height: 1.7;
+  }
+
+  /* ── CONSTRAINTS BAR ────────────────────────────── */
+  .constraints {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .constraint-tag {
+    background: var(--tag-bg);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 5px 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--dust);
+  }
+  .constraint-tag strong {
+    font-weight: 500;
+    color: var(--ink);
+    margin-right: 4px;
+  }
+
+  /* ── SECTION LABEL ──────────────────────────────── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dust);
+    margin-bottom: 12px;
+    border-left: 3px solid var(--rust);
+    padding-left: 10px;
+  }
+
+  /* ── TABLE WRAPPER ──────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  thead tr {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  th {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 18px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th:first-child { border-radius: 2px 0 0 0; }
+  th:last-child  { border-radius: 0 2px 0 0; }
+
+  /* Column widths */
+  th:nth-child(1) { width: 6%; }
+  th:nth-child(2) { width: 22%; }
+  th:nth-child(3) { width: 13%; }
+  th:nth-child(4) { width: 30%; }
+  th:nth-child(5) { width: 29%; }
+
+  tbody tr {
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    transition: background 0.15s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--cream); }
+
+  td {
+    padding: 18px 18px;
+    color: var(--ink);
+  }
+
+  /* Priority column */
+  td:first-child {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--dust);
+  }
+
+  /* Combination name */
+  .combo-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--rust);
+    margin-bottom: 5px;
+    line-height: 1.25;
+  }
+
+  .methods-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  .method-pill {
+    background: var(--tag-bg);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 3px 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--dust);
+    white-space: nowrap;
+  }
+
+  /* Timing badge */
+  .timing-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .timing-early   { background: #d6e8d2; color: #2d5428; border: 1px solid #b3d1ac; }
+  .timing-mid     { background: #dce8f5; color: #1a4a72; border: 1px solid #aac8e8; }
+  .timing-ongoing { background: #f5e8d2; color: #7a4800; border: 1px solid #e0c89a; }
+
+  /* Feasibility dots */
+  .feasibility {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--dust);
+    letter-spacing: 0.04em;
+  }
+  .dot-row { display: flex; gap: 3px; }
+  .dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot.filled  { background: var(--sage); }
+  .dot.empty   { background: var(--rule); border: 1px solid var(--dust); }
+
+  td p { margin-bottom: 8px; }
+  td p:last-child { margin-bottom: 0; }
+
+  /* MCP callout inline */
+  .mcp-note {
+    margin-top: 8px;
+    padding: 7px 10px;
+    background: #f0ede7;
+    border-left: 2px solid var(--gold);
+    font-size: 0.78rem;
+    color: var(--dust);
+    font-family: 'DM Mono', monospace;
+  }
+  .mcp-note strong { color: var(--gold); font-weight: 500; }
+
+  /* ── FOOTER NOTE ────────────────────────────────── */
+  .footer-note {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--rust);
+    font-size: 0.82rem;
+    color: var(--dust);
+    line-height: 1.7;
+  }
+  .footer-note strong { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    body { padding: 24px 16px 60px; }
+    .brand { font-size: 1.9rem; }
+    header { grid-template-columns: 1fr; }
+    .meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="brand">NomNom<span>Safe</span></div>
+    <div class="subtitle">Business Side · MVP User Testing Strategy</div>
+  </div>
+  <div class="meta">
+    Sprint Window: 3 weeks<br>
+    Participants: Food-service business owners<br>
+    Scope: Business-side MVP only
+  </div>
+</header>
+
+<div class="constraints">
+  <div class="constraint-tag"><strong>Timeline:</strong> 3 weeks remaining</div>
+  <div class="constraint-tag"><strong>Users:</strong> Real food-service business owners</div>
+  <div class="constraint-tag"><strong>In-person sessions:</strong> Difficult to schedule</div>
+  <div class="constraint-tag"><strong>AI use:</strong> Setup only (Claude MCP)</div>
+  <div class="constraint-tag"><strong>Scope:</strong> MVP · Business-side only</div>
+  <div class="constraint-tag"><strong>Target N:</strong> ~5 users per round (Nielsen)</div>
+</div>
+
+<div class="section-label">Recommended Testing Combinations</div>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Combination &amp; Methods</th>
+      <th>Timing</th>
+      <th>Why This Combination?</th>
+      <th>How It Applies to NomNom Safe</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- ROW 1 -->
+    <tr>
+      <td>1</td>
+      <td>
+        <div class="combo-name">Core Qualitative Loop</div>
+        <div class="methods-list">
+          <span class="method-pill">Moderated Usability Testing</span>
+          <span class="method-pill">User Interviews</span>
+        </div>
+      </td>
+      <td>
+        <span class="timing-badge timing-early">Weeks 1–2</span>
+        <div class="feasibility">
+          <span>Feasibility</span>
+          <div class="dot-row">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot empty"></span>
+          </div>
+          <span>4/5</span>
+        </div>
+      </td>
+      <td>
+        <p>Moderated usability testing is the gold standard for MVP-stage apps, especially when testing <em>complex, multi-step workflows</em> where users may get stuck. Pairing it with a brief pre- or post-task interview transforms a task observation into a full insight session. Together they answer both <strong>what</strong> users do and <strong>why</strong> they do it.</p>
+        <p>The combination is feasible remotely via Zoom or Google Meet — eliminating the in-person scheduling constraint entirely — and with just 5 participants it covers ~85% of usability issues per the Nielsen Norman Group benchmark.</p>
+        <div class="mcp-note"><strong>Claude MCP use:</strong> Generate task scripts, scenario prompts, and interview question banks ahead of sessions. MCP can also help draft a consent/recording release template.</div>
+      </td>
+      <td>
+        <p>The business side of NomNom Safe has several multi-step workflows that are critical to validate: onboarding (setup wizard Steps 1–3 in <code>SetUp/</code>), adding/editing menu items (<code>AddMenuItem</code>, <code>MenuItemPanel</code>), and managing business info (<code>EditBusinessInfo</code>). Restaurant owners — especially non-technical ones — may find these flows confusing without guidance, making moderated observation essential.</p>
+        <p>Post-task interviews can surface domain-specific expectations, e.g., how owners think about allergen assignment or whether the "one menu per restaurant" constraint matches their mental model. This directly informs whether the current data model (one <code>menu_id</code> per restaurant) causes friction.</p>
+      </td>
+    </tr>
+
+    <!-- ROW 2 -->
+    <tr>
+      <td>2</td>
+      <td>
+        <div class="combo-name">Async Validation Pass</div>
+        <div class="methods-list">
+          <span class="method-pill">Unmoderated Remote Testing</span>
+          <span class="method-pill">Surveys &amp; Feedback Forms</span>
+        </div>
+      </td>
+      <td>
+        <span class="timing-badge timing-mid">Week 2–3</span>
+        <div class="feasibility">
+          <div class="dot-row">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+          </div>
+          <span>5/5</span>
+        </div>
+      </td>
+      <td>
+        <p>Business owners are busy — unmoderated testing respects their schedule by letting them complete tasks at their own pace without a live facilitator. This drastically reduces the coordination burden given your 3-week constraint. Appending a short post-session survey (e.g., System Usability Scale or a custom 5-question form) converts each session into both behavioral and attitudinal data.</p>
+        <p>This combination scales well: if Combination 1 reveals a specific pain point, you can deploy a targeted unmoderated task to 3–5 additional participants quickly to validate whether the fix resolved it. The survey captures satisfaction scores you can track across iterations.</p>
+        <div class="mcp-note"><strong>Claude MCP use:</strong> Draft the full unmoderated task script and the post-session survey. MCP can also help format SUS scoring rubrics or generate follow-up questions conditioned on task success/failure.</div>
+      </td>
+      <td>
+        <p>Once the major flows are confirmed stable after Combination 1 sessions, unmoderated testing is ideal for validating specific MVP features: sign-in/sign-up (<code>SignInUp</code>), the allergen assignment UI in <code>AllergenList</code>, and the menu item editor. These are well-defined, self-contained tasks that don't require real-time facilitation.</p>
+        <p>The post-session survey can measure whether owners understand the allergen model (preset allergen IDs from the Firestore schema) and whether they find the single-menu constraint acceptable for their business context — both critical product-market fit signals.</p>
+      </td>
+    </tr>
+
+    <!-- ROW 3 -->
+    <tr>
+      <td>3</td>
+      <td>
+        <div class="combo-name">Pre-Session Expert Sweep</div>
+        <div class="methods-list">
+          <span class="method-pill">Heuristic Evaluation</span>
+          <span class="method-pill">AI-Driven Synthetic Testing</span>
+        </div>
+      </td>
+      <td>
+        <span class="timing-badge timing-early">Week 1 · Before Users</span>
+        <div class="feasibility">
+          <div class="dot-row">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+          </div>
+          <span>5/5</span>
+        </div>
+      </td>
+      <td>
+        <p>Running a heuristic evaluation <em>before</em> involving real users filters out obvious, fixable issues so that your limited participant pool (food-service business owners are hard to recruit) is not wasted on surface-level problems. Nielsen's 10 heuristics can be applied directly to each screen without scheduling anyone.</p>
+        <p>AI-driven synthetic testing (e.g., Uxia or Lighthouse-based automated checks) complements this by catching WCAG accessibility violations and predicted click-confusion zones instantly. Together, this two-pronged sweep costs almost nothing in time and protects the quality of your live user sessions.</p>
+        <div class="mcp-note"><strong>Claude MCP use:</strong> Generate a heuristic evaluation checklist pre-populated with NomNom Safe's specific screens and flows. Claude can also produce a structured severity-rating rubric for triaging findings before user testing begins.</div>
+      </td>
+      <td>
+        <p>The business-side MVP has numerous forms and modals: <code>ChangeEmail</code>, <code>ChangePassword</code>, <code>EditLoginInfo</code>, <code>EditBusinessInfo</code>, and the multi-step <code>SetUp</code> wizard. A heuristic pass will quickly surface consistency issues (e.g., error message formatting across <code>ErrorMessage</code> vs. <code>ConfirmationMessage</code> components) and clarity problems before real owners encounter them.</p>
+        <p>Automated accessibility checks are especially relevant given that NomNom Safe serves food-allergy use cases — the business owners setting allergen data have a direct impact on vulnerable end-users, so the input UI must be unambiguous and accessible.</p>
+      </td>
+    </tr>
+
+    <!-- ROW 4 -->
+    <tr>
+      <td>4</td>
+      <td>
+        <div class="combo-name">Lightweight Behavioral Tail</div>
+        <div class="methods-list">
+          <span class="method-pill">Heatmaps &amp; Session Recording</span>
+          <span class="method-pill">Analytics-Driven Testing</span>
+        </div>
+      </td>
+      <td>
+        <span class="timing-badge timing-ongoing">Week 2–3 · Passive</span>
+        <div class="feasibility">
+          <div class="dot-row">
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot filled"></span>
+            <span class="dot empty"></span>
+          </div>
+          <span>4/5</span>
+        </div>
+      </td>
+      <td>
+        <p>These methods require no scheduling, no facilitation, and no participant coordination — they run passively once configured. Hotjar or Microsoft Clarity (free tier) can be installed in under an hour and immediately begin collecting click maps and session replays across all unmoderated and beta sessions.</p>
+        <p>The combination provides the <em>quantitative counterpart</em> to the qualitative insight from Combinations 1 and 2, answering "how often does this happen" rather than just "why." This is especially useful for validating fixes: after resolving a usability issue found in Combination 1, heatmaps confirm whether behavior actually changed.</p>
+        <div class="mcp-note"><strong>Claude MCP use:</strong> After collecting session data, use Claude to help interpret heatmap patterns or summarize session replay notes — keeping AI in the setup/analysis layer, not the testing execution layer.</div>
+      </td>
+      <td>
+        <p>Given the MVP's dashboard-style layout (<code>MenuDashboard</code>, <code>MenuCard</code>, <code>AdminTable</code>), heatmaps can reveal whether business owners are finding the key CTAs (e.g., "Add Menu Item," "Edit Business Info") or being drawn to visually prominent but less important elements. Session recordings of the <code>ChooseBusiness</code> / <code>SetUp</code> flow are especially valuable for spotting where owners abandon the onboarding sequence.</p>
+        <p>Analytics drop-off tracking through the multi-step setup flow (Step 1 → Step 2 → Step 3) will quantify exactly which step causes the most abandonment — a concrete, prioritizable finding for the remaining sprint.</p>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<div class="footer-note">
+  <strong>Recommended execution order:</strong>
+  (1) Run the heuristic + AI sweep in Week 1 and patch obvious issues.
+  (2) Conduct 3–5 moderated remote sessions with interviews in Weeks 1–2, using Claude MCP to prepare scripts.
+  (3) Deploy unmoderated tasks + surveys in Week 2–3 as a wider validation pass.
+  (4) Let heatmaps and session recordings run passively throughout, reviewing findings at the end of Week 3.
+  <br><br>
+  <strong>Note on methods excluded:</strong> A/B testing (requires significant traffic), Card/Tree Sorting (IA is largely fixed at MVP stage), Prototype Testing (already in a live build), Contextual Inquiry (in-person field requirement), Guerrilla Testing (non-target users), and Beta Testing (requires a feature-complete stable build and support infrastructure) were omitted as incompatible with the timeline, user profile, or current app stage.
+</div>
+
+</body>
+</html>
