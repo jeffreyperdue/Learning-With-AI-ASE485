@@ -3,41 +3,42 @@ marp: true
 theme: default
 paginate: true
 class: lead
+title: ASE 485-001 Learning w/ AI Presentation
 ---
 
-# Learning With AI — Topics & Findings
+# Learning With AI
 
-- Presenter: Anna Dinius
-- Course: ASE 485 — Learning With AI
-- Date: April 2026
+> Anna Dinius
 
 ---
 
 ## Learning Topics
 
-- User Testing Strategies (learned via AI)
-- SCSS: features, fixes, and improvement suggestions
+1. User Testing Strategies
+2. SCSS: features, fixes, and improvement suggestions
 
 ---
 
-## How I Used AI This Project
+## How I Used AI
 
-- Consulted Gemini, ChatGPT, Copilot, and Claude for cross‑validation
-- Used AI to learn and synthesize user testing strategies (did not run user tests)
-- Used AI to generate SCSS guidance and prioritized fixes for the codebase
+- Cross-validation for top user testing strategies
+  - Consulted Gemini, ChatGPT, Copilot, and Claude
+- Learn and synthesize user testing strategies
+- Generate SCSS guidance
+  - Prioritize future fixes for the codebase
 
 ---
 
 ## What I Use AI For
 
-- Summarizing methods and tradeoffs for user testing
+- Summarizing methods and tradeoffs for user testing strategies
 - Producing a short testing roadmap adaptable to constraints
 - Reviewing SCSS: identifying tokens, mixins, and refactor candidates
 - Drafting concise next steps and priorities
 
 ---
 
-## My Approach to Using AI to Learn
+## How I Learned Using AI
 
 - Start with targeted prompts and consult multiple models
 - Treat AI outputs as draft guidance requiring human judgement
@@ -89,16 +90,4 @@ class: lead
 
 ---
 
-## Recommended Next Steps
-
-1. Run an AI‑assisted heuristic audit to clean MVP before recruiting
-2. If scheduling is possible: conduct 5 remote moderated sessions for depth
-3. Run unmoderated tests + short surveys to validate fixes at scale
-4. Implement SCSS quick fixes (tokens, breakpoints) to reduce UI drift
-
----
-
-## Resources & Notes
-
-- Sources: `roadmap.md`, `user-testing-methods.md`, `prompts-and-responses.md`, `learning-progress.md`, `scss-*` files
-- AI consulted: Gemini, ChatGPT, Copilot, Claude
+## Questions?
