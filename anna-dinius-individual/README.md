@@ -1,4 +1,4 @@
-# Market Validation & User‑Focused Research: Learning With AI
+# Learning with AI (Original Direction): Market Validation & User‑Focused Research
 
 ## Context
 
@@ -53,3 +53,53 @@ Some questions guiding this exploration include:
 Market validation and user‑focused research are foundational to building a product that people trust, understand, and want to use. For NomNomSafe—an app operating in a safety‑relevant domain—misunderstanding user needs can lead to poor adoption, unclear workflows, or gaps in critical information.
 
 By exploring AI‑assisted research methods, this topic aims to understand how AI might responsibly augment the discovery process—helping identify real user problems, refine assumptions, and guide product direction with greater clarity and confidence
+
+# Learning with AI (Updated Direction): User Testing Strategies & SCSS Improvement
+
+## Context
+
+My original direction changed during the semester. Instead of continuing with food allergen ontology and broader market validation exploration, I focused on two practical areas tied directly to current project needs:
+
+1. User testing strategies for the business-side MVP
+2. SCSS improvement opportunities for long-term maintainability
+
+This updated direction stayed aligned with real constraints (limited timeline, remote testing reality, and active codebase needs).
+
+## Learning Focus
+
+This learning effort explored how AI can support both product research decisions and front-end code quality decisions.
+
+### Topic 1: User Testing Strategies
+
+I used AI to compare methods, evaluate tradeoffs, and identify realistic testing combinations for NomNom Safe. The focus was on choosing approaches that fit:
+
+- MVP stage
+- Real business-owner participants
+- Remote-friendly execution
+- Limited time
+
+### Topic 2: SCSS Features and Improvements
+
+I used AI to review current SCSS usage and identify where consistency, scalability, and maintainability can be improved. This included:
+
+- Better token usage
+- Cleaner responsive patterns
+- Reduced duplication
+- Practical adoption of modern Sass features
+
+## What I Learned
+
+- AI is highly effective for consolidating large method comparisons and producing actionable options
+- For user testing, combining methods in sequence is more effective than relying on a single strategy
+- For SCSS, maintainability issues are often caused by inconsistency (imports, breakpoints, hardcoded values), not lack of features
+- Small, prioritized styling fixes can significantly improve long-term development speed and code clarity
+- AI guidance is most useful when treated as structured input that still requires human decision-making
+
+## Why This Matters
+
+Both topics improved my ability to make practical project decisions under constraints:
+
+- User testing strategy work improved how I plan and prioritize validation with real users
+- SCSS analysis improved how I approach front-end quality and refactoring decisions
+
+Together, these topics better reflect the work I actually completed and the skills I developed while learning with AI.
