@@ -28,12 +28,26 @@ Explore:
 
 > More information can be found on the GitHub repo README
 
-## What I Actually Learned (Updated Direction)
+## Updated Direction
 
-My final learning direction shifted to:
+### Topics
 
-1. User testing strategies for an MVP in a realistic, time-constrained context
-2. SCSS maintainability and improvement opportunities in the NomNom Safe codebase
+1. User testing strategies
+2. SCSS
+
+### Topic 1 Goals
+
+- Gather information on most effective user testing methods, including benefits, drawbacks, how they work, and best context to use them in
+- Understand basic user testing methods
+- Analyze the usefulness of each method within the context of NomNom Safe (Business Side)
+- Develop a testing strategy for NomNom Safe (Business Side)
+
+### Topic 2 Goals
+
+- Analyze current use of SCSS in NomNom Safe (Business Side) codebase
+- Identify areas for improvement
+- Identify and understand unused SCSS features that will improve the quality and maintainability of the stylesheets
+- Develop a priority order for implementing improvements
 
 ### Topic 1: User Testing Strategies (What I Learned)
 
